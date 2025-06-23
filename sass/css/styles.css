@@ -16,6 +16,10 @@
   background-color: var(--color-white-fill);
 }
 
+.hidden {
+  display: none;
+}
+
 ::selection {
   background-color: var(--color-pink);
   color: var(--color-yellow);

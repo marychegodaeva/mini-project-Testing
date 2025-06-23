@@ -6,15 +6,16 @@
   <title>Тест на знание JavaScript</title>
   <link rel="icon" href="images/javascript.png" type="image/x-icon">
   <link rel="stylesheet" href="sass/css/styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <section class="start">
-    <h1>Тест на знание <b class="pink-selection">JavaScript</b></h1>
+  <h1>Тест на знание <b class="pink-selection">JavaScript</b></h1>
+  <section class="start" id="start">
     <p class="description">Тест состоит из <b>10</b> вопросов, которые включают в себя как вопросы с выбором ответа, <br/>так и вопросы с открытым ответом.</p>
-    <button class="start-button">Начать</button>
+    <button class="start-button" id="start-button">Начать</button>
   </section>
 
-  <section class="question question1">
+  <section class="question hidden" id="question1">
     <h2 class="question__title">Какой метод используется для добавления нового элемента в конец массива?</h2>
     <div class="question__items">
       <button class="question__item question__item--true">push()</button>
@@ -23,7 +24,7 @@
       <button class="question__item">unshift()</button>
     </div>
   </section>
-  <section class="question question2">
+  <section class="question hidden" id="question2">
     <h2 class="question__title">Какой результат выполнения следующего кода: console.log(2 + '2')?</h2>
     <div class="question__items">
       <button class="question__item">4</button>
@@ -32,7 +33,7 @@
       <button class="question__item">Ошибка</button>
     </div>
   </section>
-  <section class="question question3">
+  <section class="question hidden" id="question3">
     <h2 class="question__title">Какой метод используется для преобразования JSON-строки в объект?</h2>
     <div class="question__items">
       <button class="question__item">JSON.stringify()</button>
@@ -41,7 +42,7 @@
       <button class="question__item">JSON.convert()</button>
     </div>
   </section>
-  <section class="question question4">
+  <section class="question hidden" id="question4">
     <h2 class="question__title">Какой результат выполнения следующего кода: console.log(typeof null)?</h2>
     <div class="question__items">
       <button class="question__item">'null'</button>
@@ -50,7 +51,7 @@
       <button class="question__item">'string'</button>
     </div>
   </section>
-  <section class="question question5">
+  <section class="question hidden" id="question5">
     <h2 class="question__title">Какой метод используется для добавления нового элемента в начало массива?</h2>
     <div class="question__items">
       <button class="question__item">push()</button>
@@ -59,7 +60,7 @@
       <button class="question__item question__item--true">unshift()</button>
     </div>
   </section>
-  <section class="question question6">
+  <section class="question hidden" id="question6">
     <h2 class="question__title">Какой результат выполнения следующего кода: console.log(5 == '5')?</h2>
     <div class="question__items">
       <button class="question__item question__item--true">true</button>
@@ -68,7 +69,7 @@
       <button class="question__item">Ошибка</button>
     </div>
   </section>
-  <section class="question question7">
+  <section class="question hidden" id="question7">
     <h2 class="question__title">Какой метод используется для удаления последнего элемента из массива?</h2>
     <div class="question__items">
       <button class="question__item">push()</button>
@@ -77,21 +78,21 @@
       <button class="question__item">unshift()</button>
     </div>
   </section>
-  <section class="question question8">
+  <section class="question hidden" id="question8">
     <h2 class="question__title">Какой оператор используется для проверки равенства значения и типа данных?</h2>
     <div class="answer__set">
       <input type="text" class="answer__input">
       <button class="answer__check"><img class="answer__check-img" src="images/icon-check.png" alt="Button check answer"></button>
     </div>
     </section>
-  <section class="question question9">
+  <section class="question hidden" id="question9">
     <h2 class="question__title">Какой метод массива используется для&nbsp;объединения всех элементов массива в строку?</h2>
     <div class="answer__set">
       <input type="text" class="answer__input">
       <button class="answer__check"><img class="answer__check-img" src="images/icon-check.png" alt="Button check answer"></button>
     </div>
   </section>
-  <section class="question question10">
+  <section class="question hidden" id="question10">
     <h2 class="question__title">Какой тип данных возвращает функция, если&nbsp;она&nbsp;не&nbsp;возвращает значение явно?</h2>
     <div class="answer__set">
       <input type="text" class="answer__input">
@@ -99,7 +100,7 @@
     </div>
   </section>
 
-  <section class="result">
+  <section class="result hidden">
     <h1>Вы ответили <b class="pink-selection">правильно</b><br/>на 4 из 10 вопросов</h1>
     <p class="description">Нажмите на кнопку, чтобы перезапустить тестирование.</p>
     <button class="start-button">Перезапустить тест</button>
