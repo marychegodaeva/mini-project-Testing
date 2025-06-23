@@ -4,8 +4,9 @@
   --color-white-fill: #fefdf6;
   --color-pink: #f2c5ec;
   --color-yellow: #f3eeb4;
-  --color-true: #aff4b4;
-  --color-false: #ec888e;
+  --color-green: #dbf3b4;
+  --color-red: #ec888e;
+  --border-button: 50px;
 }
 
 * {
@@ -17,6 +18,7 @@
 
 ::selection {
   background-color: var(--color-pink);
+  color: var(--color-yellow);
 }
 
 body {
@@ -24,25 +26,56 @@ body {
   margin: 40px auto;
   text-align: center;
 }
-
-b {
+body h1 {
+  font-size: 100px;
+  margin-bottom: 20px;
   font-weight: 600;
+  line-height: 1.2;
+}
+body h2 {
+  font-size: 50px;
+  max-width: 1000px;
+  width: 100%;
+  margin: 50px auto;
+  line-height: 1.2;
+}
+body p.description {
+  font-size: 20px;
+  line-height: 1.2;
+  margin-top: 60px;
+}
+body b {
+  font-weight: 600;
+  font-size: inherit;
+}
+body b.pink-selection {
+  color: var(--color-pink);
+}
+
+button, .answer__input {
+  border-radius: var(--border-button);
+  padding: 10px 30px;
+  font-size: 30px;
+  background-color: var(--color-yellow);
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+button:hover, .answer__input:hover {
+  background-color: var(--color-pink);
+  box-shadow: 0 0 60px 5px var(--color-pink);
+  transition: 0.3s;
 }
 
 button {
   max-width: 300px;
-  font-size: 30px;
   width: 100%;
-  border-radius: 50px;
-  border: none;
-  background-color: var(--color-yellow);
-  padding: 10px 30px;
-  text-align: center;
-  cursor: pointer;
 }
-button:hover {
-  background-color: var(--color-pink);
-  box-shadow: 0 0 60px 5px var(--color-pink);
+button.start-button {
+  font-size: 60px;
+  max-width: 600px;
+  border-radius: 100px;
+  display: inline-block;
 }
 
 .question__items {
@@ -52,4 +85,29 @@ button:hover {
   grid-template-columns: 1fr 1fr;
   gap: 30px;
   justify-items: center;
+}
+
+.answer__set {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.answer__input:focus {
+  outline: none;
+}
+.answer__check {
+  max-width: 100px;
+  border-radius: var(--border-button);
+  line-height: 0;
+  background-color: var(--color-green);
+}
+.answer__check-img {
+  width: 40px;
+  height: auto;
+  background-color: var(--color-green);
+}
+.answer__check:hover, .answer__check:hover .answer__check-img {
+  background-color: var(--color-yellow);
+  box-shadow: 0 0 60px 5px var(--color-yellow);
+  transition: 0.3s;
 }/*# sourceMappingURL=styles.css.map */

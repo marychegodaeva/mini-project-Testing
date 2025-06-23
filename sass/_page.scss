@@ -7,41 +7,74 @@
 
 ::selection {
   background-color: var(--color-pink);
+  color: var(--color-yellow);
 }
 
 body {
   max-width: 1200px;
   margin: 40px auto;
-text-align: center;
+  text-align: center;
+
+  h1 {
+    font-size: 100px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 50px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 50px auto;
+    line-height: 1.2;
+  }
+
+  p.description {
+    font-size: 20px;
+    line-height: 1.2;
+    margin-top: 60px;
+  }
+
+  b {
+    font-weight: 600;
+    font-size: inherit;
+
+    &.pink-selection {
+      color: var(--color-pink);
+    }
+  }
 }
 
-b {
-  font-weight: 600;
-}
-
-button {
-  max-width: 300px;
-  font-size: 30px;
-  width: 100%;
-  border-radius: 50px;
-  border: none;
-  background-color: var(--color-yellow);
+button, .answer__input {
+  border-radius: var(--border-button);
   padding: 10px 30px;
+  font-size: 30px;
+  background-color: var(--color-yellow);
+  border: none;
   text-align: center;
   cursor: pointer;
 
   &:hover {
     background-color: var(--color-pink);
     box-shadow: 0 0 60px 5px var(--color-pink);
+    transition: 0.3s;
+  }
+}
+
+button {
+  max-width: 300px;
+  width: 100%;
+
+  &.start-button {
+    font-size: 60px;
+    max-width: 600px;
+    border-radius: 100px;
+    display: inline-block;
   }
 }
 
 .question {
-
-  &__title {
-
-  }
-
   &__items {
     max-width: 700px;
     margin: 0 auto;
@@ -50,8 +83,37 @@ button {
     gap: 30px;
     justify-items: center;
   }
+}
 
-  &__item {
+.answer {
+  &__set {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
 
+  &__input {
+    &:focus {
+      outline: none;
+    }
+  } 
+
+  &__check {
+    max-width: 100px;
+    border-radius: var(--border-button);
+    line-height: 0;
+    background-color: var(--color-green);
+
+    &-img {
+      width: 40px;
+      height: auto;
+      background-color: var(--color-green);
+    }
+
+    &:hover, &:hover &-img {
+      background-color: var(--color-yellow);
+      box-shadow: 0 0 60px 5px var(--color-yellow);
+      transition: 0.3s;
+    }
   }
 }
