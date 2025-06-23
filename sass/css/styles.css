@@ -1,1 +1,55 @@
-/*# sourceMappingURL=styles.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+:root {
+  --color-text-black: #161216;
+  --color-white-fill: #fefdf6;
+  --color-pink: #f2c5ec;
+  --color-yellow: #f3eeb4;
+  --color-true: #aff4b4;
+  --color-false: #ec888e;
+}
+
+* {
+  font: 400 50px "Oswald", sans-serif;
+  color: var(--color-text-black);
+  line-height: 1.8;
+  background-color: var(--color-white-fill);
+}
+
+::selection {
+  background-color: var(--color-pink);
+}
+
+body {
+  max-width: 1200px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+b {
+  font-weight: 600;
+}
+
+button {
+  max-width: 300px;
+  font-size: 30px;
+  width: 100%;
+  border-radius: 50px;
+  border: none;
+  background-color: var(--color-yellow);
+  padding: 10px 30px;
+  text-align: center;
+  cursor: pointer;
+}
+button:hover {
+  background-color: var(--color-pink);
+  box-shadow: 0 0 60px 5px var(--color-pink);
+}
+
+.question__items {
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  justify-items: center;
+}/*# sourceMappingURL=styles.css.map */
