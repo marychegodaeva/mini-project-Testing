@@ -15,6 +15,14 @@ const question8 = document.getElementById('question8');
 const question9 = document.getElementById('question9');
 const question10 = document.getElementById('question10');
 
+const correctAnswers = {
+  userAnswer8: "===",
+  userAnswer9: "join",
+  userAnswer10: "undefined"
+};
+
+const checkButtons = document.querySelector('.answer__check');
+
 startButton.addEventListener('click', () => {
   startPage.classList.add('hidden');
   question1.classList.remove('hidden');
@@ -31,6 +39,10 @@ questions.forEach((question, index) => {
         this.style.backgroundColor = 'var(--color-red)';
       }
 
+      if (this.classList.contains('answer__check')) {
+        this.style.backgroundColor = 'var(--color-yellow)';
+      }
+
       setTimeout(() => {
         question.classList.add('hidden');
         if (index < questions.length - 1) {
@@ -38,5 +50,20 @@ questions.forEach((question, index) => {
         }
       }, 1000);
     });
+  });
+});
+
+checkButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const inputElement = button.previousElementSibling; // предыдущий элемент на том же уровне дерева
+    const inputId = inputElement.id;
+    const userAnswer = inputElement.value.trim();
+    const correctAnswer = correctAnswers[inputId];
+
+    if (userAnswer === correctAnswer) {
+      inputElement.style.backgroundColor = 'var(--color-green)';
+    } else {
+      inputElement.style.backgroundColor = 'var(--color-red)';
+    }
   });
 });

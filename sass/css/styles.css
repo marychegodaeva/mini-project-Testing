@@ -108,9 +108,9 @@ button.start-button {
 .answer__check-img {
   width: 40px;
   height: auto;
-  background-color: var(--color-green);
+  background-color: transparent;
 }
-.answer__check:hover, .answer__check:hover .answer__check-img {
+.answer__check:hover {
   background-color: var(--color-yellow);
   box-shadow: 0 0 60px 5px var(--color-yellow);
   transition: 0.3s;

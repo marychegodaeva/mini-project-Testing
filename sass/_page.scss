@@ -111,10 +111,10 @@ button {
     &-img {
       width: 40px;
       height: auto;
-      background-color: var(--color-green);
+      background-color: transparent;
     }
 
-    &:hover, &:hover &-img {
+    &:hover {
       background-color: var(--color-yellow);
       box-shadow: 0 0 60px 5px var(--color-yellow);
       transition: 0.3s;
