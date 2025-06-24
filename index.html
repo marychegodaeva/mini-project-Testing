@@ -9,7 +9,7 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <h1>Тест на знание <b class="pink-selection">JavaScript</b></h1>
+  <h1 id="name-page">Тест на знание <b class="pink-selection">JavaScript</b></h1>
   <section class="start" id="start">
     <p class="description">Тест состоит из <b>10</b> вопросов, которые включают в себя как вопросы с выбором ответа, <br/>так и вопросы с открытым ответом.</p>
     <button class="start-button" id="start-button">Начать</button>
@@ -100,10 +100,10 @@
     </div>
   </section>
 
-  <section class="result hidden">
-    <h1>Вы ответили <b class="pink-selection">правильно</b><br/>на 4 из 10 вопросов</h1>
+  <section id="result" class="result hidden">
+    <h1>Вы ответили <b class="pink-selection">правильно</b><br/>на <b id="correct-count">4</b> из 10 вопросов</h1>
     <p class="description">Нажмите на кнопку, чтобы перезапустить тестирование.</p>
-    <button class="start-button">Перезапустить тест</button>
+    <button class="start-button" id="restart-button">Перезапустить тест</button>
   </section>
 </body>
 </html>

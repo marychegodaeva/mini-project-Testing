@@ -1,8 +1,13 @@
 const startPage = document.getElementById('start');
 const startButton = document.getElementById('start-button');
+const restartButton = document.getElementById('restart-button');
+const checkButtons = document.querySelectorAll('.answer__check');
 
 const questions = document.querySelectorAll('.question');
 const answer = document.querySelectorAll('.question__item');
+const result = document.getElementById('result');
+const namePage = document.getElementById('name-page');
+const correctCount = document.getElementById('correct-count');
 
 const question1 = document.getElementById('question1');
 const question2 = document.getElementById('question2');
@@ -15,18 +20,26 @@ const question8 = document.getElementById('question8');
 const question9 = document.getElementById('question9');
 const question10 = document.getElementById('question10');
 
+let correctAnswersCount = 0;
 const correctAnswers = {
   userAnswer8: "===",
   userAnswer9: "join",
   userAnswer10: "undefined"
 };
 
-const checkButtons = document.querySelector('.answer__check');
-
 startButton.addEventListener('click', () => {
   startPage.classList.add('hidden');
   question1.classList.remove('hidden');
+  correctAnswersCount = 0;
 });
+
+restartButton.addEventListener('click', () => {
+  result.classList.add('hidden');
+  namePage.classList.remove('hidden');
+  location.reload();
+  startPage.classList.remove('hidden');
+  correctAnswersCount = 0;
+})
 
 questions.forEach((question, index) => {
   const answer = question.querySelectorAll('.question__item');
@@ -35,6 +48,7 @@ questions.forEach((question, index) => {
     button.addEventListener('click', function() {
       if (this.classList.contains('question__item--true')) {
         this.style.backgroundColor = 'var(--color-green)';
+        correctAnswersCount++;
       } else {
         this.style.backgroundColor = 'var(--color-red)';
       }
@@ -48,6 +62,11 @@ questions.forEach((question, index) => {
         if (index < questions.length - 1) {
           questions[index + 1].classList.remove('hidden');
         }
+        else {
+          correctCount.textContent = correctAnswersCount;
+          result.classList.remove('hidden');
+          namePage.classList.add('hidden');
+        }
       }, 1000);
     });
   });
@@ -55,13 +74,14 @@ questions.forEach((question, index) => {
 
 checkButtons.forEach(button => {
   button.addEventListener('click', () => {
-    const inputElement = button.previousElementSibling; // предыдущий элемент на том же уровне дерева
+    const inputElement = button.previousElementSibling; 
     const inputId = inputElement.id;
     const userAnswer = inputElement.value.trim();
     const correctAnswer = correctAnswers[inputId];
 
     if (userAnswer === correctAnswer) {
       inputElement.style.backgroundColor = 'var(--color-green)';
+      correctAnswersCount++;
     } else {
       inputElement.style.backgroundColor = 'var(--color-red)';
     }
